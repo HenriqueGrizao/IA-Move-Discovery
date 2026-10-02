@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro Avançado - AI Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div class="header-logo">AI Movie <span>Discovery</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pesquisafilme.html">Título Similares</a>
+            <a href="filtroavancado.html">Similares por Gênero</a>
+            <div class="nav-dropdown">
+                <a href="#">Descobrir ▼</a>
+                <div class="nav-dropdown-content">
+                    <a href="pesquisapessoa.html">Pessoa</a>
+                    <a href="pesquisaano.html">Ano & Gênero</a>
+                    <a href="pesquisasinopse.html">Sinopse</a>
+                    <a href="pesquisaelenco.html" class="active">Elenco</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <h1 class="section-title">Pesquisa de Elenco</h1>
+
+        <div class="filter-step">
+            <h3>1. Digite o filme que deseja: </h3>
+            <div class="search-container"> <div class="search-box">
+                    <input type="text" id="movieBase" placeholder="Digite o nome de um filme..." autocomplete="off">
+                    <button onclick="analisarFilme()">Analisar Elenco</button>
+                </div>
+                <div id="autocomplete-results" class="autocomplete-suggestions"></div>
+            </div>
+        </div>
+
+        <div id="area-elenco" style="display:none;" class="filter-step">
+            <h3>2. Clique em um artista para explorar:</h3>
+            <div id="elenco-container" class="elenco-grid"></div>
+        </div>
+
+        <div id="area-streamings" style="display:none;" class="filter-step">
+            <h3>3. Onde você quer procurar filmes de <span id="nome-artista-selecionado" style="color: #4facfe;"></span>?</h3>
+            <div class="streaming-options">
+                <label class="chip"><input type="checkbox" value="Netflix"> Netflix</label>
+                <label class="chip"><input type="checkbox" value="Amazon"> Amazon</label>
+                <label class="chip"><input type="checkbox" value="Disney+"> Disney+</label>
+                <label class="chip"><input type="checkbox" value="Hulu"> Hulu</label>
+            </div>
+            <button id="btn-buscar-conexoes" class="btn-principal">Ver filmes disponíveis</button>
+        </div>
+
+        <div id="conexoes-container" class="movie-grid"></div>
+    </main>
+
+    <div id="modal-sinopse" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-corpo"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

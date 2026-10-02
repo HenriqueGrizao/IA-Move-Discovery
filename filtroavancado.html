@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Filme - AI Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div class="header-logo">AI Movie <span>Discovery</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pesquisafilme.html">Título Similares</a>
+            <a href="filtroavancado.html" class="active">Similares por Gênero</a>
+            <div class="nav-dropdown">
+                <a href="#">Descobrir ▼</a>
+                <div class="nav-dropdown-content">
+                    <a href="pesquisapessoa.html">Pessoa</a>
+                    <a href="pesquisaano.html">Ano & Gênero</a>
+                    <a href="pesquisasinopse.html">Sinopse</a>
+                    <a href="pesquisaelenco.html">Elenco</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <div class="section-header">
+            <h1 class="section-title">Encontrar um Título</h1>
+            <p class="section-subtitle">Busca inteligente com filtro de gênero</p>
+        </div>
+
+        <div class="plataformas">
+            <p><strong>1. Selecione onde você quer procurar:</strong></p>
+            <div class="checkbox-group">
+                <label class="btn-plataforma"><input type="checkbox" class="plataforma-check" value="Netflix"> <span>Netflix</span></label>
+                <label class="btn-plataforma"><input type="checkbox" class="plataforma-check" value="Amazon"> <span>Amazon</span></label>
+                <label class="btn-plataforma"><input type="checkbox" class="plataforma-check" value="Disney+"> <span>Disney+</span></label>
+                <label class="btn-plataforma"><input type="checkbox" class="plataforma-check" value="Hulu"> <span>Hulu</span></label>
+            </div>
+        </div>
+
+       <div class="search-box">
+            <p><strong>2. Qual gênero você prefere?</strong></p>
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <select id="select-genero">
+                    <option value="">Todos os Gêneros</option>
+                </select>
+            </div>
+
+            <p><strong>3. Qual filme você já gosta?</strong></p>
+            <div class="input-wrapper" style="position: relative; margin-bottom: 15px;">
+                <input type="text" id="input-filme-busca" placeholder="Digite o nome do filme..." autocomplete="off">
+                <div id="autocomplete-list-especifico" class="autocomplete-items"></div>
+            </div>
+                
+            <button class="btn-principal" onclick="buscarSimilarPorGenero()">ENCONTRAR 5 SIMILARES</button>
+        </div>
+
+        <div id="resultados-pesquisa" class="movie-grid"></div>
+
+    </main>
+
+    <div id="modal-sinopse" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-corpo" style="margin-top: 20px; line-height: 1.6;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Filme - AI Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div class="header-logo">AI Movie <span>Discovery</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pesquisafilme.html">Título Similares</a>
+            <a href="filtroavancado.html">Similares por Gênero</a>
+            <div class="nav-dropdown">
+                <a href="#">Descobrir ▼</a>
+                <div class="nav-dropdown-content">
+                    <a href="pesquisapessoa.html">Pessoa</a>
+                    <a href="pesquisaano.html"  class="active">Ano & Gênero</a>
+                    <a href="pesquisasinopse.html">Sinopse</a>
+                    <a href="pesquisaelenco.html">Elenco</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+<main class="container">
+    <section class="search-box">
+        <h1>Pesquisa por Ano & Gênero</h1>
+        <p>Encontre produções em um intervalo de tempo específico e com um gênero determinado.</p>
+
+        <div class="filter-group">
+            <div class="year-inputs">
+                <input type="number" id="ano-inicio" placeholder="De: 1900" min="1900" max="2026">
+                <span>até</span>
+                <input type="number" id="ano-fim" placeholder="Até: 2026" min="1900" max="2026">
+            </div>
+
+            <select id="select-genero">
+                <option value="">Todos os Gêneros</option>
+            </select>
+
+            <button class="btn-principal" onclick="executarBuscaAnoGenero()">Pesquisar</button>
+        </div>
+    </section>
+
+    <div id="resultados-ano" class="movie-results-grid"></div>
+    <script src="script.js"></script>
+</main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Filme - AI Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <div class="header-logo">AI Movie <span>Discovery</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pesquisafilme.html">Título Similares</a>
+            <a href="filtroavancado.html">Similares por Gênero</a>
+            <div class="nav-dropdown">
+                <a href="#">Descobrir ▼</a>
+                <div class="nav-dropdown-content">
+                    <a href="pesquisapessoa.html" class="active">Pessoa</a>
+                    <a href="pesquisaano.html">Ano & Gênero</a>
+                    <a href="pesquisasinopse.html">Sinopse</a>
+                    <a href="pesquisaelenco.html">Elenco</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="container">
+        <section class="search-box">
+            <h1>Busca por Ator ou Diretor</h1>
+            
+            <div class="search-area">
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: flex-start;">
+                    
+                    <div class="search-container" style="margin: 0; width: 100%; max-width: 500px; flex-grow: 1;">
+                        <input type="text" id="input-pessoa" style="width: 100%; margin: 0;" placeholder="Ex: Tom Cruise, Christopher Nolan..." autocomplete="off">
+                        
+                        <div id="autocomplete-pessoa" class="autocomplete-suggestions"></div>
+                    </div>
+                    
+                    <button onclick="executarBuscaPessoa()">Pesquisar</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="resultados-pessoa" class="movie-grid"></div>
+    </main>
+
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inicializa o autocomplete focado em pessoas
+        configurarBuscaPessoa(); 
+    });
+</script>
+</body>
+</html>

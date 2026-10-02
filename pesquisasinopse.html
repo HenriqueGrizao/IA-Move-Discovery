@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Filme - AI Movie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+    <header class="main-header">
+        <div class="header-left">
+            <div class="header-logo">AI Movie <span>Discovery</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pesquisafilme.html">Título Similares</a>
+            <a href="filtroavancado.html">Similares por Gênero</a>
+            <div class="nav-dropdown">
+                <a href="#">Descobrir ▼</a>
+                <div class="nav-dropdown-content">
+                    <a href="pesquisapessoa.html">Pessoa</a>
+                    <a href="pesquisaano.html">Ano & Gênero</a>
+                    <a href="pesquisasinopse.html" class="active">Sinopse</a>
+                    <a href="pesquisaelenco.html">Elenco</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main class="container">
+        <section class="search-box">
+            <h1>Explorar por Enredo</h1>
+            <p>Busque por temas, objetos ou situações (Ex: <i>Time travel, Wedding, Shark, Paris</i>) e traremos em quais sinopse de filmes ou séries essa palavra aparece.</p>
+
+            <div class="search-area">
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                    <input type="text" id="input-sinopse" placeholder="O que você quer assistir hoje?">
+                    <button onclick="executarBuscaSinopse()">Pesquisar</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="resultados-sinopse" class="movie-grid"></div>
+    </main>
+
+    <div id="modal-sinopse" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-corpo"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
